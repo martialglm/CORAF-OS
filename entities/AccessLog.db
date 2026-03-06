@@ -1,0 +1,63 @@
+{
+  "name": "AccessLog",
+  "type": "object",
+  "properties": {
+    "employee_id": {
+      "type": "string"
+    },
+    "employee_name": {
+      "type": "string"
+    },
+    "badge_number": {
+      "type": "string"
+    },
+    "site": {
+      "type": "string",
+      "enum": [
+        "usine",
+        "direction"
+      ]
+    },
+    "entry_point": {
+      "type": "string",
+      "enum": [
+        "entree_principale",
+        "entree_secondaire",
+        "parking",
+        "entree_vip"
+      ]
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "entree",
+        "sortie"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "visitor_name": {
+      "type": "string",
+      "description": "Si visiteur externe"
+    },
+    "visitor_company": {
+      "type": "string"
+    },
+    "visitor_reason": {
+      "type": "string"
+    },
+    "is_visitor": {
+      "type": "boolean",
+      "default": false
+    },
+    "authorized_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "site",
+    "action"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "name": "Employee",
+  "type": "object",
+  "properties": {
+    "matricule": {
+      "type": "string"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string",
+      "enum": [
+        "direction_generale",
+        "informatique",
+        "production",
+        "rh",
+        "comptabilite",
+        "logistique",
+        "maintenance",
+        "qualite",
+        "commercial",
+        "securite"
+      ]
+    },
+    "position": {
+      "type": "string"
+    },
+    "site": {
+      "type": "string",
+      "enum": [
+        "usine",
+        "direction"
+      ]
+    },
+    "hire_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "actif",
+        "conge",
+        "suspendu",
+        "demission"
+      ],
+      "default": "actif"
+    },
+    "manager_email": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "number"
+    },
+    "contract_type": {
+      "type": "string",
+      "enum": [
+        "cdi",
+        "cdd",
+        "stage",
+        "consultant"
+      ]
+    },
+    "photo_url": {
+      "type": "string"
+    },
+    "badge_number": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "first_name",
+    "last_name",
+    "email",
+    "department"
+  ]
+}

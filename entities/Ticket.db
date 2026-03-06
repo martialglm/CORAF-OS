@@ -1,0 +1,157 @@
+{
+  "name": "Ticket",
+  "type": "object",
+  "properties": {
+    "reference": {
+      "type": "string",
+      "description": "Num\u00e9ro de r\u00e9f\u00e9rence unique (ex: INC-001)"
+    },
+    "title": {
+      "type": "string",
+      "description": "Titre du ticket"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description d\u00e9taill\u00e9e"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "incident",
+        "demande",
+        "probleme",
+        "changement"
+      ],
+      "default": "incident"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "critique",
+        "haute",
+        "moyenne",
+        "basse"
+      ],
+      "default": "moyenne"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "nouveau",
+        "assigne",
+        "en_cours",
+        "en_attente",
+        "resolu",
+        "ferme"
+      ],
+      "default": "nouveau",
+      "description": "nouveau=cr\u00e9\u00e9 par client, assigne=superviseur a assign\u00e9, en_cours=technicien travaille, resolu, ferme"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "materiel",
+        "logiciel",
+        "reseau",
+        "securite",
+        "email",
+        "telephonie",
+        "autre"
+      ]
+    },
+    "requester_email": {
+      "type": "string",
+      "description": "Email du client/demandeur"
+    },
+    "requester_name": {
+      "type": "string"
+    },
+    "requester_department": {
+      "type": "string",
+      "description": "D\u00e9partement du demandeur - utilis\u00e9 pour filtrage"
+    },
+    "requester_site": {
+      "type": "string",
+      "enum": [
+        "usine",
+        "direction",
+        "autre"
+      ]
+    },
+    "target_department": {
+      "type": "string",
+      "description": "D\u00e9partement IT cible (toujours informatique pour IT)"
+    },
+    "supervisor_email": {
+      "type": "string",
+      "description": "Email du superviseur qui a pris en charge"
+    },
+    "assigned_agents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Emails des techniciens/agents assign\u00e9s"
+    },
+    "assigned_to": {
+      "type": "string",
+      "description": "Email principal du technicien assign\u00e9 (compatibilit\u00e9)"
+    },
+    "site": {
+      "type": "string",
+      "enum": [
+        "usine",
+        "direction",
+        "autre"
+      ]
+    },
+    "resolution": {
+      "type": "string"
+    },
+    "resolved_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sla_due_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "closed_by_client": {
+      "type": "boolean",
+      "default": false,
+      "description": "Le client confirme que son probl\u00e8me est r\u00e9solu"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "comments": {
+      "type": "array",
+      "description": "Historique des commentaires",
+      "items": {
+        "type": "object",
+        "properties": {
+          "author": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title",
+    "type",
+    "priority"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "name": "JobPosting",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string",
+      "enum": [
+        "direction_generale",
+        "informatique",
+        "production",
+        "rh",
+        "comptabilite",
+        "logistique",
+        "maintenance",
+        "qualite",
+        "commercial",
+        "securite"
+      ]
+    },
+    "site": {
+      "type": "string",
+      "enum": [
+        "usine",
+        "direction",
+        "les_deux"
+      ]
+    },
+    "contract_type": {
+      "type": "string",
+      "enum": [
+        "cdi",
+        "cdd",
+        "stage"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "string"
+    },
+    "salary_range": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ouvert",
+        "ferme",
+        "pourvu"
+      ],
+      "default": "ouvert"
+    },
+    "deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "positions_count": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "required": [
+    "title",
+    "department",
+    "description"
+  ]
+}

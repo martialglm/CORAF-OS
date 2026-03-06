@@ -1,0 +1,90 @@
+{
+  "name": "NetworkDevice",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nom de l'\u00e9quipement"
+    },
+    "ip_address": {
+      "type": "string",
+      "description": "Adresse IP"
+    },
+    "mac_address": {
+      "type": "string"
+    },
+    "device_type": {
+      "type": "string",
+      "enum": [
+        "routeur",
+        "switch",
+        "serveur",
+        "poste_travail",
+        "imprimante",
+        "point_acces_wifi",
+        "camera",
+        "firewall",
+        "autre"
+      ],
+      "description": "Type d'\u00e9quipement r\u00e9seau"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "en_ligne",
+        "hors_ligne",
+        "inconnu"
+      ],
+      "default": "inconnu"
+    },
+    "hostname": {
+      "type": "string"
+    },
+    "os": {
+      "type": "string",
+      "description": "Syst\u00e8me d'exploitation d\u00e9tect\u00e9"
+    },
+    "manufacturer": {
+      "type": "string"
+    },
+    "site": {
+      "type": "string",
+      "enum": [
+        "usine",
+        "direction"
+      ]
+    },
+    "subnet": {
+      "type": "string",
+      "description": "Sous-r\u00e9seau (ex: 192.168.1.0/24)"
+    },
+    "last_seen": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "registered_as_asset": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si l'\u00e9quipement a \u00e9t\u00e9 enregistr\u00e9 comme actif IT"
+    },
+    "asset_id": {
+      "type": "string",
+      "description": "ID de l'actif correspondant"
+    },
+    "position_x": {
+      "type": "number",
+      "description": "Position X sur la carte r\u00e9seau"
+    },
+    "position_y": {
+      "type": "number",
+      "description": "Position Y sur la carte r\u00e9seau"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "ip_address",
+    "device_type"
+  ]
+}

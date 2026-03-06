@@ -1,0 +1,77 @@
+{
+  "name": "Invoice",
+  "type": "object",
+  "properties": {
+    "invoice_number": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "entree",
+        "sortie"
+      ],
+      "description": "Entr\u00e9e = facture client, Sortie = facture fournisseur"
+    },
+    "vendor_or_client": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string",
+      "enum": [
+        "CDF",
+        "USD"
+      ],
+      "default": "CDF"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "en_attente",
+        "payee",
+        "annulee",
+        "en_retard"
+      ],
+      "default": "en_attente"
+    },
+    "issue_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "paid_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "equipement_it",
+        "fournitures",
+        "services",
+        "salaires",
+        "maintenance",
+        "energie",
+        "transport",
+        "autre"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "attachment_url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "invoice_number",
+    "type",
+    "amount"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "name": "Asset",
+  "type": "object",
+  "properties": {
+    "asset_tag": {
+      "type": "string",
+      "description": "Num\u00e9ro d'inventaire"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "ordinateur",
+        "imprimante",
+        "serveur",
+        "reseau",
+        "telephone",
+        "logiciel",
+        "autre"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "en_service",
+        "en_maintenance",
+        "hors_service",
+        "en_stock"
+      ],
+      "default": "en_stock"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "serial_number": {
+      "type": "string"
+    },
+    "purchase_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "warranty_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "assigned_to": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string",
+      "enum": [
+        "usine",
+        "direction",
+        "stock"
+      ]
+    },
+    "purchase_price": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "asset_tag"
+  ]
+}

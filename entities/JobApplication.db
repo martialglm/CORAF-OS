@@ -1,0 +1,54 @@
+{
+  "name": "JobApplication",
+  "type": "object",
+  "properties": {
+    "job_posting_id": {
+      "type": "string"
+    },
+    "job_title": {
+      "type": "string"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "cv_url": {
+      "type": "string"
+    },
+    "cover_letter": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "recue",
+        "en_cours",
+        "entretien",
+        "acceptee",
+        "refusee"
+      ],
+      "default": "recue"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "interview_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "job_posting_id",
+    "first_name",
+    "last_name",
+    "email"
+  ]
+}

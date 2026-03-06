@@ -1,0 +1,46 @@
+{
+  "name": "KnowledgeArticle",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string",
+      "description": "Contenu en markdown"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "guide",
+        "faq",
+        "procedure",
+        "solution",
+        "documentation"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "brouillon",
+        "publie",
+        "archive"
+      ],
+      "default": "brouillon"
+    },
+    "views": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "title",
+    "content"
+  ]
+}
